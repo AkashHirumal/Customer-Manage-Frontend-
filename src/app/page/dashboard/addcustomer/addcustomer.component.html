@@ -1,0 +1,103 @@
+<div class="grid grid-cols-2 gap-1">
+<div
+  class="mb-3 max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700"
+>
+  <form>
+   
+    <label for="ID" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">ID</label>
+    <input type="ID" id="ID" aria-describedby="helper-text-explanation" class="bg-gray-50 border mb-3 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="01">
+
+    <label for="Name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Name</label>
+    <input type="Name" id="name" aria-describedby="helper-text-explanation" class="bg-gray-50 border mb-3 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Akash">
+
+    <label for="Address" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Address</label>
+    <input type="Address" id="address" aria-describedby="helper-text-explanation" class="bg-gray-50 border mb-3 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="gampaha">
+
+    <label for="Salary" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Salary</label>
+    <input type="Salary" id="salary" aria-describedby="helper-text-explanation" class="bg-gray-50 border mb-3 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="250000.00">
+
+
+
+    <div class="text-center pt-15">
+      <button
+        type="button"
+        class="text-white items-center bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
+      >
+        Add Customer
+      </button>
+    </div>
+  </form>
+</div>
+
+<div
+  class="mb-6 w-full max-w-md p-4 bg-white border border-gray-200 rounded-lg shadow-sm sm:p-8 dark:bg-gray-800 dark:border-gray-700"
+>
+  <div class="flex items-center justify-between mb-4">
+    <h5 class="text-xl font-bold leading-none text-gray-900 dark:text-white">
+      List of Customers
+    </h5>
+  </div>
+  <div class="flow-root">
+    <ul role="list" class="divide-y divide-gray-200 dark:divide-gray-700">
+     
+      <li class="pt-3 pb-0 sm:pt-4">
+        <div class="flex items-center">
+          <div class="shrink-0">
+            <img
+              class="w-8 h-8 rounded-full"
+              src="/docs/images/people/profile-picture-5.jpg"
+              alt="Thomas image"
+            />
+          </div>
+          <div class="flex-1 min-w-0 ms-4">
+            <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
+              Thomes Lean
+            </p>
+        </div></div>
+      </li>
+
+    </ul>
+  </div>
+</div>
+</div>
+
+
+
+
+<div>
+  <h1>{{ username }}</h1>
+  <input type="text" placeholder="user name" [(ngModel)]="username" />
+
+  <hr />
+
+  <div *ngFor="let customer of customers">
+    <h1>{{ customer.name }}</h1>
+  </div>
+
+  <hr />
+
+  <div class="relative overflow-x-auto">
+    <table
+      class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400"
+    >
+      <thead
+        class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400"
+      >
+        <tr>
+          <th scope="col" class="px-6 py-3">Name</th>
+          <th scope="col" class="px-6 py-3">Address</th>
+          <th scope="col" class="px-6 py-3">Salary</th>
+        </tr>
+      </thead>
+      <tbody>
+       
+          <tr *ngFor="let customer of customers" class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200">
+            <td class="px-6 py-4">{{ customer.name }}</td>
+            <td class="px-6 py-4">{{ customer.address }}</td>
+            <td class="px-6 py-4">{{ customer.salary }}</td>
+          </tr>
+       
+      </tbody>
+    </table>
+  </div>
+</div>
